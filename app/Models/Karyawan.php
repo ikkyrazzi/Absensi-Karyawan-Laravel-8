@@ -56,6 +56,11 @@ class Karyawan extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
+    public function absensi()
+    {
+        return $this->hasMany(KaryawanAbsen::class, 'id_karyawan');
+    }
+
     public static function createUserAndKaryawan($request)
     {
         $user = User::create([

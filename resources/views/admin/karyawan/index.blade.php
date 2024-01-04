@@ -105,20 +105,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label>Alamat</label>
-                                        <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="10"></textarea>
-                                        @error('alamat')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="row">
                                 <div class="col-4">
@@ -178,8 +164,22 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Alamat</label>
+                                        <textarea name="alamat" id="alamat" class="form-control" cols="30" rows="10"></textarea>
+                                        @error('alamat')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary">Tambah Admin</button>
+                                <button type="submit" class="btn btn-primary">Tambah Karyawan</button>
                             </div>
                         </form>
                     </div>

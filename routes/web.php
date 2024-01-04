@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KaryawanAbsenController;
 use App\Http\Controllers\KaryawanController;
 
 /*
@@ -47,9 +48,25 @@ Route::middleware(['auth', 'ceklevel:admin'])->group(function () {
         Route::put('/{id}', [KaryawanController::class, 'update'])->name('update');
         Route::delete('/{id}', [KaryawanController::class, 'destroy'])->name('destroy');
     });
+
+    Route::prefix('admin/absen')->as('admin.absens.')->group(function () {
+        Route::get('/', [KaryawanAbsenController::class, 'index'])->name('index');
+        Route::get('/create', [KaryawanAbsenController::class, 'create'])->name('create');
+        Route::get('/{id}/edit', [KaryawanAbsenController::class, 'edit'])->name('edit');
+        Route::post('/', [KaryawanAbsenController::class, 'store'])->name('store');
+        Route::put('/{id}', [KaryawanAbsenController::class, 'update'])->name('update');
+        Route::delete('/{id}', [KaryawanAbsenController::class, 'destroy'])->name('destroy');
+    });
 });
 
 // Routes specific to karyawan
 Route::middleware(['auth', 'ceklevel:karyawan'])->group(function () {
-    // Route::resource('karyawan', KaryawanController::class)->except(['show']);
+    Route::prefix('karyawan/absen')->as('karyawan.absens.')->group(function () {
+        Route::get('/', [KaryawanAbsenController::class, 'indexKaryawan'])->name('indexKaryawan');
+        Route::get('/create', [KaryawanAbsenController::class, 'create'])->name('create');
+        Route::get('/{id}/edit', [KaryawanAbsenController::class, 'editCurrentUser'])->name('edit');
+        Route::post('/', [KaryawanAbsenController::class, 'store'])->name('store');
+        Route::put('/{id}', [KaryawanAbsenController::class, 'update'])->name('update');
+        Route::delete('/{id}', [KaryawanAbsenController::class, 'destroyAbsen'])->name('destroy');
+    });
 });

@@ -11,22 +11,14 @@
             <a class="nav-link" href="/"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
         </li>
 
-        <li class="menu-header">Kelola Data</li>
+        <li class="menu-header">Absensi Karyawan</li>
         <li class="">
             {{-- <a class="nav-link" href="{{ route('tampilan.books.index') }}"><i class="fa fa-book" aria-hidden="true"></i> <span>Data Buku</span></a> --}}
-            <a class="nav-link" href=""><i class="fa fa-briefcase" aria-hidden="true"></i> <span>Jabatan</span></a>
+            <a class="nav-link" href="{{ route('karyawan.absens.indexKaryawan') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span>Absen Masuk</span></a>
         </li>
         <li class="">
-            {{-- <a class="nav-link" href="{{ route('tampilan.apps.index') }}"><i class="fa fa-mobile" aria-hidden="true"></i> <span>Data Aplikasi</span></a> --}}
-            <a class="nav-link" href=""><i class="fa fa-users" aria-hidden="true"></i> <span>Pegawai</span></a>
-        </li>
-        <li class="">
-            {{-- <a class="nav-link" href="{{ route('tampilan.book_apps.index') }}"><i class="fa fa-refresh" aria-hidden="true"></i> <span>Sinkronisasi Data</span></a> --}}
-            <a class="nav-link" href=""><i class="fa fa-check-circle" aria-hidden="true"></i> <span>Kriteria</span></a>
-        </li>
-        <li class="">
-            {{-- <a class="nav-link" href="{{ route('tampilan.book_apps.index') }}"><i class="fa fa-refresh" aria-hidden="true"></i> <span>Sinkronisasi Data</span></a> --}}
-            <a class="nav-link" href=""><i class="fa fa-chart-bar" aria-hidden="true"></i> <span>Data Penilaian Pegawai</span></a>
+            {{-- <a class="nav-link" href="{{ route('tampilan.books.index') }}"><i class="fa fa-book" aria-hidden="true"></i> <span>Data Buku</span></a> --}}
+            <a class="nav-link" href="{{ route('karyawan.absens.edit', auth()->user()->id) }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span>Absen Pulang</span></a>
         </li>
 
         {{-- <li class="menu-header">Kelola Serial</li>
